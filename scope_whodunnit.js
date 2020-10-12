@@ -78,3 +78,25 @@ const verdict = declareWeapon();
 console.log(verdict);
 
 // I think the weapon will now be revolver because we are still able to modify any arrarys or mutable objects that are declared with const in the change weapon function
+
+let murderer = 'Colonel Mustard';
+
+const changeMurderer = function () {
+    murderer = 'Mr. Green';
+
+    const plotTwist = function () {
+        murderer = 'Mrs. White';
+    }
+
+    plotTwist();
+}
+
+const declareMurderer = function () {
+    return `The murderer is ${murderer}.`;
+}
+
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
+
+// mustard is outwith the block. the changemurderer function is called outwith the block so it doesn't reassign, yet the plottwist one is called within the block changing the murderer to mrs white.
